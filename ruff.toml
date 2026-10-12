@@ -1,0 +1,6 @@
+[lint]
+# The upstream workshop files carry executable bits despite being imported modules.
+ignore = ["EXE002"]
+
+[lint.isort]
+known-first-party = ["app", "config"]
