@@ -17,7 +17,7 @@ on:
 
 env:
   OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
-  OLLAMA_BASE_URL: ${{ secrets.OLLAMA_BASE_URL }}
+  OLLAMA_BASE_URL: https://ollama.com
 
 jobs:
   promptfoo-eval:
@@ -25,6 +25,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Check Ollama Cloud key
+        run: |
+          if [ -z "$OLLAMA_API_KEY" ]; then
+            echo "::error::Add OLLAMA_API_KEY under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
 
       - name: Set up Node.js 22
         uses: actions/setup-node@v4

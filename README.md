@@ -16,7 +16,7 @@ This repository is my copy of the [workshop starter project](https://github.com/
 - Backend unit tests: **72 passed**.
 - Ruff checks: **passed** for both backend and frontend.
 
-The local smoke test used installed Ollama models. The GitHub evaluation workflows require valid hosted Ollama settings, and the DeepEval workflow also requires an OpenAI API key.
+The local smoke test used installed Ollama models. The GitHub evaluation workflows require an Ollama Cloud API key, and the DeepEval workflow also requires an OpenAI API key.
 
 ## GitHub Actions secrets
 
@@ -24,7 +24,8 @@ Configure these under **Settings > Secrets and variables > Actions**:
 
 - `DOCKERHUB_TOKEN`
 - `OLLAMA_API_KEY`
-- `OLLAMA_BASE_URL`
 - `OPENAI_API_KEY`
+
+The evaluation workflows use `https://ollama.com` as the Ollama Cloud address.
 
 Do not commit credentials or `.env` files.
