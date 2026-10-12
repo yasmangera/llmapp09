@@ -7,6 +7,7 @@ This repository is my copy of the [workshop starter project](https://github.com/
 - Updated the backend and frontend image workflows to use my Docker Hub namespace.
 - Excluded local environments, caches, and `.env` files from Docker build contexts.
 - Added Git and Ruff configuration so local secrets stay untracked and the existing code passes lint.
+- Image scans report all high and critical findings and block releases when a fix is available.
 
 ## Local verification (12 October 2026)
 
